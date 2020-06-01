@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form action="/availability" method="POST">
+                <div class="jumbotron mt-5">
+                    <div class="form-group row">
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control form-control-lg" name="placa" placeholder="placa"
+                                autofocus>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-12">
+                            <button class="btn btn-primary btn-block" name="btnEnviar">Enviar</button>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="jumbotron mt-2">
+                <div class="form-group row">
+                    <label class="col-sm-6 col-form-label col-form-label-lg">VALOR TOTAL:</label>
+                    <h4>{{response.valor}}</h4>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-6 col-form-label col-form-label-lg">HORAS TOTALES:</label>
+                    <h4>{{response.total_horas}}</h4>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-6 col-form-label col-form-label-lg">FECHA INICIO:</label>
+                    <h4>{{response.fecha_entrada}}</h4>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-6 col-form-label col-form-label-lg">FECHA PAGO:</label>
+                    <h4>{{response.fecha_salida}}</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="jumbotron mt-2">
+                <div class="form-group row" style="height: 240px;">
+                    <div class="container-fluid">
+                        <h1>
+                            <i style="position: absolute;">{{param.message}}</i>
+                        </h1>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

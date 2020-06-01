@@ -1,0 +1,25 @@
+<table class="table" border="1">
+    <thead>
+        <tr>
+            <th>PLACA</th>
+            <th>FECHA ENTRADA</th>
+            <th>FECHA SALIDA</th>
+            <th>STATE</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each lista}}
+         
+        <tr>
+         {{#each this}}
+           
+            <td>{{this.plate}}</td>
+
+           {{/each}}
+
+        </tr>
+        
+        {{/each}}
+
+    </tbody>
+</table>
