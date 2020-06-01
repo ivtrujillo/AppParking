@@ -36,11 +36,14 @@ const entry = async (req, res) => {
 
 const searchPlate = async (req, res) => {
   try {
-    const existPlate = await availabilityModel.findOneAndRemove({
+    const existPlate = await availabilityModel.findOne({
       plate: req.body.placa,
     });
     if (existPlate != null) {
       const response = exit(existPlate);
+
+      console.log(response);
+
       res.render("parking", { response });
       const inDate = existPlate.input_date;
       const outputDate = new Date();
