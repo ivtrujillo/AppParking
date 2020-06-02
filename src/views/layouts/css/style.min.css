@@ -1,7 +1,4 @@
-/*
- * Roxy: Bootstrap template by GettTemplates.com
- * https://gettemplates.co/roxy
- */
+
 html, body {
   width: 100%;
   overflow-x: hidden; }
@@ -202,10 +199,7 @@ section {
 .btn-link {
   color: #ff00cc; }
 
-/*=====  End of BUTTON  ======*/
-/*==========================================
-=            FORM RECTANGLE ETC            =
-==========================================*/
+
 .rectangle-1 {
   width: 2000px;
   height: 400px;
@@ -389,10 +383,7 @@ section {
     height: 45px;
     transform: rotate(-40deg); }
 
-/*=====  End of FORM RECTANGLE ETC  ======*/
-/*================================
-=            FEATURES            =
-================================*/
+
 .feature-item {
   transition: all .2s ease-in-out 0s !important; }
   .feature-item:hover {
