@@ -1,4 +1,4 @@
-const availabilityModel = require("../models/availability-model");
+const availabilityModel = require("../PARKING/models/availability-model");
 const dateFormat = require("dateformat");
 
 /**
