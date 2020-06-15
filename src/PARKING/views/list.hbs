@@ -9,16 +9,30 @@
     </thead>
     <tbody>
         {{#each lista}}
-         
+
         <tr>
-         {{#each this}}
-           
-            <td>{{this.plate}}</td>
-
-           {{/each}}
-
+            <td>
+                {{#each this}}
+                     {{this.plate}}
+                {{/each}}
+            </td>
+            <td>
+                {{#each this}}
+                     {{this.input_date}}
+                {{/each}}
+            </td>
+            <td>
+                {{#each this}}
+                     {{this.output_date}}
+                {{/each}}
+            </td>
+            <td>
+                {{#each this}}
+                     {{this.state}}
+                {{/each}}
+            </td>
         </tr>
-        
+
         {{/each}}
 
     </tbody>
