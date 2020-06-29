@@ -1,6 +1,5 @@
-const availabilityModel = require("../models/availability-model");
+const availabilityModel = require("../PARKING/models/availability-model");
 const dateFormat = require("dateformat");
-
 
 /**
  * @param {*} req
@@ -29,34 +28,25 @@ const entry = async (req, res) => {
 };
 
 /**
- * @param {*} req 
- * @param {*} res 
+ * @param {*} req
+ * @param {*} res
  * @description buscar placa mandar a guardar o retornar los datos de salida
  */
 
 const searchPlate = async (req, res) => {
   try {
-    const existPlate = await availabilityModel.findOneAndRemove({
+    const objectSearch = {
       plate: req.body.placa,
-    });
+      state: "Entrada",
+    };
+    const existPlate = await availabilityModel.findOne(objectSearch);
     if (existPlate != null) {
       const response = exit(existPlate);
-      res.render("parking", { response });
-      const inDate = existPlate.input_date;
-      const outputDate = new Date();
-      const mils = outputDate - inDate;
-      const hours = Math.round(mils / 3600000);
-      const payValue = hours * process.env.PRICE_HOUR
-      res.send({
-        status: "OK",
-        message: "Exist",
-        description: {
-          fecha_entrada: inDate,
-          fecha_salida: outputDate,
-          total_horas: hours,
-          valor: payValue,
-        },
+      await availabilityModel.updateOne(objectSearch, {
+        output_date: response.fecha_salida,
+        state: "Salida",
       });
+      res.render("parking", { response });
     } else {
       entry(req, res);
     }
@@ -98,13 +88,11 @@ const exit = (plate) => {
 };
 
 const list = async (req, res) => {
-  const availability = new availabilityModel();
-  const lista =  await availabilityModel.find();
-
-  res.render('list', { lista });
+  const lista = await availabilityModel.find();
+  res.render("list", { lista });
 };
 
 module.exports = {
   searchPlate,
-  list
+  list,
 };

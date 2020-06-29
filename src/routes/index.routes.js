@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const router = Router();
 
-const availabilityController = require("../controllers/availability-controller");
+const availabilityController = require("../src/PARKING/controllers/availability-controller");
 
 router.get('/parking',(rep, res) => {
     res.render('parking');

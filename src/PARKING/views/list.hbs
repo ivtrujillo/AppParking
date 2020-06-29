@@ -1,0 +1,39 @@
+<table class="table" border="1">
+    <thead>
+        <tr>
+            <th>PLACA</th>
+            <th>FECHA ENTRADA</th>
+            <th>FECHA SALIDA</th>
+            <th>STATE</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each lista}}
+
+        <tr>
+            <td>
+                {{#each this}}
+                     {{this.plate}}
+                {{/each}}
+            </td>
+            <td>
+                {{#each this}}
+                     {{this.input_date}}
+                {{/each}}
+            </td>
+            <td>
+                {{#each this}}
+                     {{this.output_date}}
+                {{/each}}
+            </td>
+            <td>
+                {{#each this}}
+                     {{this.state}}
+                {{/each}}
+            </td>
+        </tr>
+
+        {{/each}}
+
+    </tbody>
+</table>
