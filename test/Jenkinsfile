@@ -2,7 +2,7 @@
 
 node {
    // ------------------------------------
-   // -- ETAPA: Compilar
+   // -- ETAPA: Compilar:
    // ------------------------------------
    stage 'Compilar'
    
@@ -23,7 +23,7 @@ node {
    sh 'mvn clean compile'
    
    // ------------------------------------
-   // -- ETAPA: Test
+   // -- ETAPA: Test.
    // ------------------------------------
    stage 'Test'
    echo 'Ejecutando tests'
